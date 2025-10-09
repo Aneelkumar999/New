@@ -6,8 +6,7 @@ from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
-from dotenv import load_dotenv
-load_dotenv()
+
 app = Flask(__name__)
 
 key = os.environ.get("GROQ_API_KEY")
@@ -72,4 +71,5 @@ def evaluate():
     return render_template("evaluate.html", result=result)
 
 if __name__ == "__main__":
+
     app.run(debug=True)
